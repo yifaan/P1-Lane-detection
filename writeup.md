@@ -15,7 +15,10 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images/edge.jpg "edge"
+[image2]: ./test_images/combined_color.jpg "combined_color"
+[image3]: ./test_images/mask.jpg "mask"
+[image4]: ./test_images/result.jpg "result"
 
 ---
 
@@ -25,6 +28,7 @@ The goals / steps of this project are the following:
 
 **Step 1:** Edge detection 
 use OpenCV edge detection	
+![alt text][image1]
 
 **Step 2:** Color detection 
 detect white and yellow color in image in HSV colorspace 
@@ -33,20 +37,23 @@ detect white and yellow color in image in HSV colorspace
 
 **Step 4:** combine Edge and Color image 
 Logic OR for yellow and white, and logic AND between color and edge 
+![alt text][image2]
+
 
 **Step 5:** add Polygon mask 
+![alt text][image3]
 
 **Step 6:** Hough transfrom to find all lines
 
 **Step 7:** Use Kmeans to group line segment into two cluster w.r.t angle
 
-**Step 8:** For each cluster, calculate \theta and d for each segment, and take weighted average w.r.t length of the segments
+**Step 8:** For each cluster, calculate $\theta$ and d for each segment, and take weighted average w.r.t length of the segments
 
-**Step 9:** Using the calculated \theta, d to find start and endpoint of line
+**Step 9:** Using the calculated $\theta$, d to find start and endpoint of line
 
 **Step 10:** Draw Line
 
-![alt text][image1]
+![alt text][image4]
 
 
 ###2. Identify potential shortcomings with your current pipeline
