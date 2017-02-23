@@ -23,11 +23,28 @@ The goals / steps of this project are the following:
 
 ###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+**Step 1:** Edge detection 
+use OpenCV edge detection	
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+**Step 2:** Color detection 
+detect white and yellow color in image in HSV colorspace 
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+**Step 3:** Dilate color image and combine with edge image
+
+**Step 4:** combine Edge and Color image 
+Logic OR for yellow and white, and logic AND between color and edge 
+
+**Step 5:** add Polygon mask 
+
+**Step 6:** Hough transfrom to find all lines
+
+**Step 7:** Use Kmeans to group line segment into two cluster w.r.t angle
+
+**Step 8:** For each cluster, calculate \theta and d for each segment, and take weighted average w.r.t length of the segments
+
+**Step 9:** Using the calculated \theta, d to find start and endpoint of line
+
+**Step 10:** Draw Line
 
 ![alt text][image1]
 
@@ -35,13 +52,16 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ###2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+Color detection is not robust now.
 
-Another shortcoming could be ...
+Using weighted average to fit line is not robust to outlier. 
 
+The result video is not smooth.
 
 ###3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+Create gaussian model for white and yellow color detector, so the assignment would be more soft. 
 
-Another potential improvement could be to ...
+Maybe after clustering, using RANSAC to fit line. It is more robust than simple linear regression.
+
+Add low pass filter to make the line detection result smoother
