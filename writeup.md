@@ -15,10 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./test_images/edge.jpg "edge"
-[image2]: ./test_images/combined_color.jpg "combined_color"
-[image3]: ./test_images/mask.jpg "mask"
-[image4]: ./test_images/result.jpg "result"
+[image1]: ./examples/grayscale.jpg "Grayscale"
 
 ---
 
@@ -28,7 +25,6 @@ The goals / steps of this project are the following:
 
 **Step 1:** Edge detection 
 use OpenCV edge detection	
-![alt text][image1]
 
 **Step 2:** Color detection 
 detect white and yellow color in image in HSV colorspace 
@@ -37,11 +33,8 @@ detect white and yellow color in image in HSV colorspace
 
 **Step 4:** combine Edge and Color image 
 Logic OR for yellow and white, and logic AND between color and edge 
-![alt text][image2]
-
 
 **Step 5:** add Polygon mask 
-![alt text][image3]
 
 **Step 6:** Hough transfrom to find all lines
 
@@ -53,7 +46,7 @@ Logic OR for yellow and white, and logic AND between color and edge
 
 **Step 10:** Draw Line
 
-![alt text][image4]
+![alt text][image1]
 
 
 ###2. Identify potential shortcomings with your current pipeline
